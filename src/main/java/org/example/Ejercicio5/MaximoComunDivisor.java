@@ -17,9 +17,8 @@ public class MaximoComunDivisor {
         }
         return a;
     }
-    public void mcdLambda(){
-        int a = 56;
-        int b = 98;
+    public void mcdLambda(int a , int b){
+
 
         BiFunction<Integer, Integer, Integer> mcdLambda = (x, y) -> {
             while (y != 0) {
