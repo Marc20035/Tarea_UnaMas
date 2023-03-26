@@ -87,15 +87,14 @@ public class PrimeFactors {
 
     public static void main(String[] args) {
         int num = 12;
+        int div = 2;
 
-        IntPredicate isDivisible = div -> num % div == 0;
-
-        for (int div = 2; num > 1; div++) {
-            if (isDivisible.test(div)) {
-                while (num % div == 0) {
-                    System.out.println(div);
-                    num /= div;
-                }
+        while (num > 1) {
+            if (num % div == 0) {
+                System.out.println(div);
+                num /= div;
+            } else {
+                div++;
             }
         }
     }
