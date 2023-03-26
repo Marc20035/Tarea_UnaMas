@@ -58,7 +58,7 @@ La función descompone num en sus factores primos y los muestra por pantalla. La
 Un nombre más adecuado para la función f podría ser muestraPrimos.
 
 b)
-
+### Codigo con funciones Lambda:
 import java.util.function.IntPredicate;
 
 public class PrimeFactors {
@@ -79,6 +79,27 @@ public class PrimeFactors {
     }
 }
 
+### Codigo iterativo
+
+import java.util.function.IntPredicate;
+
+public class PrimeFactors {
+
+    public static void main(String[] args) {
+        int num = 12;
+
+        IntPredicate isDivisible = div -> num % div == 0;
+
+        for (int div = 2; num > 1; div++) {
+            if (isDivisible.test(div)) {
+                while (num % div == 0) {
+                    System.out.println(div);
+                    num /= div;
+                }
+            }
+        }
+    }
+}
 
 
 
